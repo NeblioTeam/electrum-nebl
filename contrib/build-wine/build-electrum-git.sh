@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # You probably need to update only this link
-ELECTRUM_GIT_URL=git://github.com/pooler/electrum-nebl.git
+ELECTRUM_GIT_URL=git://github.com/NeblioTeam/electrum-nebl.git
 BRANCH=master
 NAME_ROOT=electrum-nebl
 
@@ -70,7 +70,7 @@ cd ..
 # build portable version
 cp portable.patch $WINEPREFIX/drive_c/electrum-nebl
 pushd $WINEPREFIX/drive_c/electrum-nebl
-patch < portable.patch 
+patch < portable.patch
 popd
 $PYTHON "C:/pyinstaller/pyinstaller.py" --noconfirm --ascii --name $NAME_ROOT-$VERSION-portable.exe -w deterministic.spec
 
