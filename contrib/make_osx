@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -rf dist
+VERSION=`git describe --tags`
+python2 setup-release.py py2app
+hdiutil create -fs HFS+ -volname "Electrum-NEBL" -srcfolder dist/Electrum-NEBL.app dist/electrum-nebl-$VERSION.dmg
+

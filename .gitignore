@@ -1,0 +1,24 @@
+####-*.patch
+*.pyc
+*.swp
+build/
+dist/
+*.egg/
+.eggs
+/electrum.py
+contrib/pyinstaller/
+Electrum_NEBL.egg-info/
+gui/qt/icons_rc.py
+locale/
+.devlocaltmp/
+*_trial_temp
+packages
+env/
+.tox/
+.buildozer/
+bin/
+.DS_Store
+
+# tox files
+.cache/
+.coverage

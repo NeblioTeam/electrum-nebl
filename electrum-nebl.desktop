@@ -1,0 +1,17 @@
+# If you want electrum to appear in a linux app launcher ("start menu"), install this by doing:
+# sudo desktop-file-install electrum.desktop
+
+[Desktop Entry]
+Comment=Lightweight Neblio Client
+Exec=electrum-nebl %u
+GenericName[en_US]=Neblio Wallet
+GenericName=Neblio Wallet
+Icon=electrum-nebl
+Name[en_US]=electrum-nebl.desktop
+Name=Electrum Neblio Wallet
+Categories=Finance;Network;
+StartupNotify=false
+Terminal=false
+Type=Application
+MimeType=x-scheme-handler/neblio;
+
