@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #
 # scrypt.py - basic implementation of Neblio's proof-of-work algorithm
-# Copyright (C) 2014 pooler@nebliopool.org
+# Copyright (C) 2014 pooler@litecoinpool.org
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -65,7 +65,7 @@ def _xor_salsa8_2(X):
         x16, x17, x18, x19, x20, x21, x22, x23,
         x24, x25, x26, x27, x28, x29, x30, x31
     ] = X
-    
+
     x00 ^= x16
     x01 ^= x17
     x02 ^= x18
