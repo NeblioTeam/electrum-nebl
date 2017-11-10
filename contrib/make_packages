@@ -15,16 +15,19 @@ if __name__ == '__main__':
     # copy dependencies into 'packages' directory
     deps = [
         'pyaes',
+        'bs4',
         'ecdsa',
         'pbkdf2',
         'requests', # note: requests-2.5.1 is needed to build with pyinstaller
         'qrcode',
-        #'google/protobuf',
-        'google',
+        'google/protobuf',
+        'urllib3',
+        #'google',
         'dns',
         'six',
         'jsonrpclib',
-	    'socks',
+        'socks',
+        'win_inet_pton',
     ]
     for module in deps:
         f, pathname, descr = imp.find_module(module)

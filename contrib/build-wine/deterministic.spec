@@ -31,7 +31,7 @@ a = Analysis([home+'electrum-nebl',
               home+'packages/requests/utils.py'
               ],
              pathex=[home+'lib', home+'gui', home+'plugins', home+'packages'],
-             hiddenimports=['lib', 'gui'],
+             hiddenimports=['lib', 'gui', 'socks', 'win_inet_pton'],
              hookspath=[])
 
 ##### include folder in distribution #######
@@ -72,7 +72,7 @@ a.datas += extra_datas(home+'packages')
 
 # http://stackoverflow.com/questions/19055089/pyinstaller-onefile-warning-pyconfig-h-when-importing-scipy-or-scipy-signal
 for d in a.datas:
-    if 'pyconfig' in d[0]:
+    if 'pyconfig' in d[0]: 
         a.datas.remove(d)
         break
 
@@ -82,11 +82,11 @@ exe = EXE(pyz,
           a.binaries,
           a.datas,
           name=os.path.join('build\\pyi.win32\\electrum-nebl', cmdline_name),
-          debug=True
+          debug=False,
           strip=None,
           upx=False,
           icon=home+'icons/electrum.ico',
-          console=True)
+          console=False)
           # The console True makes an annoying black box pop up, but it does make Electrum output command line commands, with this turned off no output will be given but commands can still be used
 
 coll = COLLECT(exe,
@@ -95,7 +95,7 @@ coll = COLLECT(exe,
                a.datas,
                strip=None,
                upx=True,
-               debug=True,
+               debug=False,
                icon=home+'icons/electrum.ico',
-               console=True,
+               console=False,
                name=os.path.join('dist', 'electrum-nebl'))

@@ -100,3 +100,4 @@ printf "[build]\ncompiler=mingw32\n" > $WINEPREFIX/drive_c/Python27/Lib/distutil
 
 #wine "$PYHOME\\Scripts\\pip.exe" install ltc_scrypt
 $PYTHON -m pip install ltc_scrypt
+$PYTHON -m pip install pysocks
