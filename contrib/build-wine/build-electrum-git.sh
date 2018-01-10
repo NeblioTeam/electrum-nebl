@@ -33,20 +33,20 @@ else
 fi
 
 cd electrum-nebl-git
-VERSION=`git describe --tags`
+VERSION=2.9.3.1
 echo "Last commit: $VERSION"
 
 cd ..
 
 rm -rf $WINEPREFIX/drive_c/electrum-nebl
 cp -r electrum-nebl-git $WINEPREFIX/drive_c/electrum-nebl
-cp electrum-nebl-git/LICENCE .
+#cp electrum-nebl-git/LICENCE .
 
 # add python packages (built with make_packages)
 cp -r ../../../packages $WINEPREFIX/drive_c/electrum-nebl/
 
 # add locale dir
-cp -r ../../../lib/locale $WINEPREFIX/drive_c/electrum-nebl/lib/
+#cp -r ../../../lib/locale $WINEPREFIX/drive_c/electrum-nebl/lib/
 
 # Build Qt resources
 wine $WINEPREFIX/drive_c/Python27/Lib/site-packages/PyQt4/pyrcc4.exe C:/electrum-nebl/icons.qrc -o C:/electrum-nebl/lib/icons_rc.py

@@ -31,7 +31,7 @@ a = Analysis([home+'electrum-nebl',
               home+'packages/requests/utils.py'
               ],
              pathex=[home+'lib', home+'gui', home+'plugins', home+'packages'],
-             hiddenimports=['lib', 'gui'],
+             hiddenimports=['lib', 'gui', 'socks', 'win_inet_pton'],
              hookspath=[])
 
 ##### include folder in distribution #######
