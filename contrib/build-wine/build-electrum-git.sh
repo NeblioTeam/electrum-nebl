@@ -33,7 +33,7 @@ else
 fi
 
 cd electrum-nebl-git
-VERSION=2.9.3.1
+VERSION=2.9.3.1.1
 echo "Last commit: $VERSION"
 
 cd ..
