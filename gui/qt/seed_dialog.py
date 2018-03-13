@@ -68,13 +68,13 @@ class SeedLayout(QVBoxLayout):
                 if b:
                     msg = ' '.join([
                         '<b>' + _('Warning') + ': BIP39 seeds can be imported by Electrum, but not exported!' + '</b><br/><br/>',
-                        _('BIP39 seeds can be imported in Electrum so that users can access funds from our Android or iOS wallets.'),
+                        _('BIP39 seeds can be imported in Electrum so that users can access funds from our Android or Orion wallets.'),
                         _('However, Electrum does not export BIP39 seeds or save your seed phrase for later viewing.'),
                     ])
                 else:
                     msg = ''
                 self.seed_warning.setText(msg)
-            cb_bip39 = QCheckBox(_('Android/iOS seed (BIP39)'))
+            cb_bip39 = QCheckBox(_('Android/Orion seed (BIP39)'))
             cb_bip39.toggled.connect(f)
             cb_bip39.setChecked(self.is_bip39)
             vbox.addWidget(cb_bip39)

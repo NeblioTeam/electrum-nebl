@@ -29,8 +29,8 @@ MSG_ENTER_PASSWORD = _("Choose a password to encrypt your wallet keys.") + '\n'\
                      + _("Leave this field empty if you want to disable encryption.")
 MSG_RESTORE_PASSPHRASE = \
     _("Please enter your seed derivation passphrase. "
-      "Note: this is NOT your encryption password. "
-      "Leave this field empty if you did not use one or are unsure.")
+      "Note: this is ONLY if you encrypted your seed phrase in Android or Orion with a password. "
+      "This is NOT a wallet password. Leave this field empty if you did not use one or are unsure.")
 
 
 class CosignWidget(QWidget):
@@ -353,12 +353,12 @@ class InstallWizard(QDialog, MessageBoxMixin, BaseWizard):
     @wizard_dialog
     def restore_seed_dialog(self, run_next, test):
         options = []
-        #if self.opt_ext:
-        #    options.append('ext')
+        if self.opt_ext:
+            options.append('ext')
         if self.opt_bip39:
             options.append('bip39')
         title = _('Enter Seed')
-        message = _('Please enter your ELECTRUM seed phrase in order to restore your wallet.\nTo recover using an Android or iOS seed phrase, click Options')
+        message = _('Please enter your ELECTRUM seed phrase in order to restore your wallet.\nTo recover using an Android or Orion seed phrase, click Options')
         return self.seed_input(title, message, test, options)
 
     @wizard_dialog

@@ -87,13 +87,15 @@ Mac OS X
 
 ::
 
-    # On MacPorts installs: 
-    sudo python setup-release.py py2app
-    
-    # On Homebrew installs: 
+    # On MacPorts installs:
+    brew install cartr/qt4/pyqt
+    sudo python2 setup-release.py py2app
+
+    # On Homebrew installs:
     ARCHFLAGS="-arch i386 -arch x86_64" sudo python setup-release.py py2app --includes sip
-    
+
     sudo hdiutil create -fs HFS+ -volname "Electrum-NEBL" -srcfolder dist/Electrum-NEBL.app dist/electrum-nebl-VERSION-macosx.dmg
+    brew remove cartr/qt4/pyqt
 
 Windows
 -------

@@ -229,6 +229,7 @@ class BaseWizard(object):
         default = bip44_derivation(0)
         message = '\n'.join([
             _('Enter your wallet derivation here.'),
+            _('For Orion use: m/44\'/0\'/0\''),
             _('If you are not sure what this is, leave this field unchanged.')
         ])
         self.line_dialog(run_next=f, title=_('Derivation'), message=message, default=default, test=bitcoin.is_bip32_derivation)
@@ -256,8 +257,8 @@ class BaseWizard(object):
             _('Your seed extension must be saved together with your seed.'),
         ])
         warning = '\n'.join([
-            _('Note that this is NOT your encryption password.'),
-            _('If you do not know what this is, leave this field empty.'),
+            _('Use this ONLY if you encrypted your seed phrase in Android/Orion.'),
+            _('This is NOT a wallet password. If you do not know what this is, leave this field empty.'),
         ])
         self.line_dialog(title=title, message=message, warning=warning, default='', test=lambda x:True, run_next=run_next)
 
