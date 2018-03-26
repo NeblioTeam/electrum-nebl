@@ -45,6 +45,8 @@ import errno
 from functools import partial
 from collections import namedtuple, defaultdict
 
+import urllib
+
 from i18n import _
 from util import NotEnoughFunds, PrintError, UserCancelled, profiler
 
@@ -1093,6 +1095,14 @@ class Abstract_Wallet(PrintError):
                 if txin.get('prevout_hash') == item.get('prevout_hash') and txin.get('prevout_n') == item.get('prevout_n'):
                     txin['address'] = item.get('address')
         address = txin['address']
+        # block spending from addresses with NTP1 tokens
+        url = "https://ntp1node.nebl.io:8080/v3/addressinfo/"+address
+        response = urllib.urlopen(url)
+        data = json.loads(response.read())
+        for utxo in data["utxos"]:
+        	if len(utxo["tokens"]) > 0:
+        		self.set_frozen_state([address], True)
+        		return
         if self.is_mine(address):
             self.add_input_sig_info(txin, address)
 
