@@ -1096,7 +1096,7 @@ class Abstract_Wallet(PrintError):
                     txin['address'] = item.get('address')
         address = txin['address']
         # block spending from addresses with NTP1 tokens
-        url = "https://ntp1node.nebl.io:8080/v3/addressinfo/"+address
+        url = "https://ntp1node.nebl.io/ntp1/addressinfo/"+address
         response = urllib.urlopen(url)
         data = json.loads(response.read())
         for utxo in data["utxos"]:
