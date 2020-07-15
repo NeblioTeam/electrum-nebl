@@ -1096,13 +1096,13 @@ class Abstract_Wallet(PrintError):
                     txin['address'] = item.get('address')
         address = txin['address']
         # block spending from addresses with NTP1 tokens
-        url = "https://ntp1node.nebl.io/ntp1/addressinfo/"+address
-        response = urllib.urlopen(url)
-        data = json.loads(response.read())
-        for utxo in data["utxos"]:
-        	if len(utxo["tokens"]) > 0:
-        		self.set_frozen_state([address], True)
-        		return
+#         url = "https://ntp1node.nebl.io/ntp1/addressinfo/"+address
+#         response = urllib.urlopen(url)
+#         data = json.loads(response.read())
+#         for utxo in data["utxos"]:
+#         	if len(utxo["tokens"]) > 0:
+#         		self.set_frozen_state([address], True)
+#         		return
         if self.is_mine(address):
             self.add_input_sig_info(txin, address)
 
