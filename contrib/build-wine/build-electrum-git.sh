@@ -72,6 +72,6 @@ cp portable.patch $WINEPREFIX/drive_c/electrum-nebl
 pushd $WINEPREFIX/drive_c/electrum-nebl
 patch < portable.patch
 popd
-$PYTHON "C:/pyinstaller/pyinstaller.py" --noconfirm --ascii --name $NAME_ROOT-$VERSION-portable.exe -w deterministic.spec
+$PYTHON "C:/pyinstaller/pyinstaller.py" --noconfirm --ascii --clean --name $NAME_ROOT-$VERSION-portable.exe -w deterministic.spec
 
 echo "Done."
